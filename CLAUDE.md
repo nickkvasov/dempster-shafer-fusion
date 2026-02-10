@@ -50,4 +50,4 @@ Consistent across all components: A = blue (#3b82f6), B = red (#ef4444), C = gre
 
 ## Scenarios
 
-Five predefined scenarios in `src/scenarios.js`, each with a frame of 3-4 classes and 2-3 sources with default reliability values. Scenarios cover: concordant evidence (Clear Winner), ambiguous evidence (Borderline), high ignorance (High Uncertainty), contradictory sources (High Conflict), and progressive convergence (Convergent Multi-Source).
+Six predefined scenarios in `src/scenarios.js`, each with a frame of 2-4 classes and 2-5 sources with default reliability values. Scenarios cover: concordant evidence (Clear Winner), ambiguous evidence (Borderline), high ignorance (High Uncertainty), contradictory sources (High Conflict), progressive convergence (Convergent Multi-Source), and single-class detectors in binary classification (Focused Majority — 5 sources, each knowing only one class with its own confidence and reliability).

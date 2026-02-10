@@ -21,7 +21,7 @@ Dempster-Shafer theory generalizes Bayesian reasoning by assigning belief masses
 
 ### Features
 
-- **5 built-in scenarios** demonstrating different fusion outcomes
+- **6 built-in scenarios** demonstrating different fusion outcomes
 - **Adjustable source reliability** via sliders (Shafer's discounting)
 - **Mass function tables** with visual bars distinguishing specific evidence from uncertainty (striped)
 - **Belief & Plausibility interval chart** showing certain support vs. uncertainty gap per hypothesis
@@ -37,6 +37,7 @@ Dempster-Shafer theory generalizes Bayesian reasoning by assigning belief masses
 | **High Uncertainty** | {A, B, C, D} | 2 | Vague sources produce wide intervals and high residual ignorance |
 | **High Conflict** | {A, B, C} | 2 | Contradictory sources yield high K, demonstrating normalization issues |
 | **Convergent Multi-Source** | {A, B, C} | 3 | Progressive narrowing of uncertainty through sequential fusion |
+| **Focused Majority** | {A, B} | 5 | Single-class detectors in a binary classification tug-of-war |
 
 ## How It Works
 
@@ -80,7 +81,7 @@ The interval [Bel(H), Pl(H)] bounds the true probability. A narrow gap means hig
 ```
 src/
   dempster.js              # DS theory engine (pure functions)
-  scenarios.js             # 5 predefined scenarios
+  scenarios.js             # 6 predefined scenarios
   App.jsx                  # Scenario tab selector + layout
   App.css                  # Global styles
   main.jsx                 # React entry point
