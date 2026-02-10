@@ -114,6 +114,42 @@ const scenarios = [
     explanation:
       'This scenario shows how adding more concordant sources progressively increases confidence. After each fusion step, the belief in A grows while uncertainty (mass on the full frame) shrinks. The step-by-step view reveals the convergence process.',
   },
+  {
+    id: 'focused-majority',
+    name: 'Focused Majority (5 Sources)',
+    description:
+      'Binary classification: is the object A or B? Five specialized detectors each recognize only one class — three detect A, two detect B. Each source provides its confidence about the one class it knows, with complete ignorance otherwise.',
+    frame: ['A', 'B'],
+    sources: [
+      {
+        name: 'Source 1 (A-detector)',
+        mass: { A: 0.75, 'A,B': 0.25 },
+        reliability: 0.9,
+      },
+      {
+        name: 'Source 2 (B-detector)',
+        mass: { B: 0.7, 'A,B': 0.3 },
+        reliability: 0.85,
+      },
+      {
+        name: 'Source 3 (A-sensor)',
+        mass: { A: 0.6, 'A,B': 0.4 },
+        reliability: 0.8,
+      },
+      {
+        name: 'Source 4 (B-sensor)',
+        mass: { B: 0.65, 'A,B': 0.35 },
+        reliability: 0.75,
+      },
+      {
+        name: 'Source 5 (A-confirm)',
+        mass: { A: 0.8, 'A,B': 0.2 },
+        reliability: 0.95,
+      },
+    ],
+    explanation:
+      'Each source only knows one class — it assigns confidence to that class and the rest to total ignorance (the full frame). It never claims evidence against the other class. Three A-detectors and two B-detectors create inter-source conflict at every fusion step. The step-by-step view shows a tug-of-war: A leads, B pulls back, then A wins decisively as the majority prevails. Try lowering reliability on A-sources to see how the balance shifts.',
+  },
 ];
 
 export default scenarios;
